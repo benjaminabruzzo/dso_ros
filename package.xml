@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>dsoros</name>
+  <name>dso_ros</name>
   <version>0.0.0</version>
-  <description>The dsoros package</description>
+  <description>The dso_ros package</description>
 
   <maintainer email="benjamin@todo.todo">benjamin</maintainer>
 
@@ -25,7 +25,6 @@
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_depend>sensor_msgs</build_depend>
   <exec_depend>sensor_msgs</exec_depend>
-
 
   <build_depend>geometry_msgs</build_depend>
   <build_export_depend>geometry_msgs</build_export_depend>

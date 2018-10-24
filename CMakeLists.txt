@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.4.6)
-project(dsoros)
+project(dso_ros)
 
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs

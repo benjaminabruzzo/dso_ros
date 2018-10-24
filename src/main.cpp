@@ -221,7 +221,10 @@ int main( int argc, char** argv )
     	fullSystem->setGammaFunction(undistorter->photometricUndist->getG());
 
     ros::NodeHandle nh;
-    ros::Subscriber imgSub = nh.subscribe("image", 1, &vidCb);
+
+	std::string dso_image_topic;
+    ros::param::get("~dso_image_topic", dso_image_topic);
+    ros::Subscriber imgSub = nh.subscribe(dso_image_topic, 1, &vidCb);
 
     ros::spin();
 
