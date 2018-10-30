@@ -1,20 +1,14 @@
 <launch>
-    <arg name="dso_image_topic"       default="/ardrone/front/image_color" /> 
-    <arg name="calibration_file"      default="~/.ros/camera_info/ardrone_front.yaml" /> 
+    <arg name="dso_image_topic"     default="/ardrone/front/image_color" /> 
+    <arg name="calibration_file"    default="$(find dso_ros)/config/ardrone_front.cfg" /> 
+    <arg name="gamma"               default="$(find dso_ros)/config/pcalib.txt " /> 
+    <arg name="vignette"            default="$(find dso_ros)/config/vig001.pgm " /> 
 
     <!-- Start the mpc node   -->
-    <node pkg="dso_ros" type="dso_live" name="dso_live" output="screen" >
+    <node pkg="dso_ros" type="dso_live" name="dso_live" 
+        args="calib=$(arg calibration_file) gamma=$(arg gamma) vignette=$(arg vignette)"
+        output="screen" >
         <param name="dso_image_topic"           value="$(arg dso_image_topic)" />
-        <param name="calibration_file"           value="$(arg calibration_file)" />
     </node>
 
 </launch>
-
-<!-- 
-rosrun dso_ros dso_live image:=image_raw \
-        calib=XXXXX/camera.txt \
-        gamma=XXXXX/pcalib.txt \
-        vignette=XXXXX/vignette.png \
-
-
- -->        

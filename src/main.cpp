@@ -21,10 +21,6 @@
 * along with DSO. If not, see <http://www.gnu.org/licenses/>.
 */
 
-
-
-
-
 #include <locale.h>
 #include <signal.h>
 #include <stdlib.h>
@@ -192,7 +188,6 @@ int main( int argc, char** argv )
 	setting_photometricCalibration = 2;
 	setting_affineOptModeA = 0;
 	setting_affineOptModeB = 0;
-
 
 
     undistorter = Undistort::getUndistorterForFile(calib, gammaFile, vignetteFile);
